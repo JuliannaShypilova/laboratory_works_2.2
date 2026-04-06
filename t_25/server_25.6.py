@@ -5,7 +5,7 @@ import os
 def run_server():
     host = '127.0.0.1'
     port = 65432
-    upload_dir = 'received_files'
+    upload_dir = '../received_files'
 
     if not os.path.exists(upload_dir):
         os.makedirs(upload_dir)
