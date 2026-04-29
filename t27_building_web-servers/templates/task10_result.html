@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Результат множення матриць</title>
+    <style>
+        table { border-collapse: collapse; margin-bottom: 20px; }
+        td { border: 1px solid black; padding: 10px; text-align: center; min-width: 30px; }
+        h3 { color: #333; }
+    </style>
+</head>
+<body>
+    <h2>Результат обчислень</h2>
+
+    <h3>Введена матриця A:</h3>
+    <table>
+        {% for row in A %}
+        <tr>
+            {% for cell in row %}
+                <td>{{ cell }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h3>Введена матриця B:</h3>
+    <table>
+        {% for row in B %}
+        <tr>
+            {% for cell in row %}
+                <td>{{ cell }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+
+    <hr>
+
+    <h3 style="color: green;">Матриця C (Результат добутку A × B):</h3>
+    <table>
+        {% for row in C %}
+        <tr>
+            {% for cell in row %}
+                <td>{{ cell }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+    <a href="/task10_step1">Новий розрахунок</a> |
+    <a href="/menu">Повернутися до меню</a>
+</body>
+</html>

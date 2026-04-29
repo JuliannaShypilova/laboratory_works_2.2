@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Задача 27.10 - Крок 2</title>
+    <style>
+        body { font-family: sans-serif; margin: 30px; }
+        .matrix-container { display: flex; gap: 50px; flex-wrap: wrap; }
+        .matrix-table { border-collapse: collapse; }
+        input { width: 45px; padding: 8px; text-align: center; border: 1px solid #ccc; margin: 2px; }
+        button { background-color: #28a745; color: white; padding: 12px 30px; border: none; border-radius: 4px; cursor: pointer; font-size: 1.1em; margin-top: 20px; }
+        h3 { color: #007bff; }
+    </style>
+</head>
+<body>
+    <h2>Крок 2: Заповнення матриць</h2>
+    <form method="post">
+        <div class="matrix-container">
+            <div>
+                <h3>Матриця A ({{ dims.n }}x{{ dims.m }})</h3>
+                {% for i in range(dims.n) %}
+                    {% for j in range(dims.m) %}
+                        <input type="number" name="A_{{i}}_{{j}}" required placeholder="0">
+                    {% endfor %}<br>
+                {% endfor %}
+            </div>
+            <div>
+                <h3>Матриця B ({{ dims.m }}x{{ dims.k }})</h3>
+                {% for i in range(dims.m) %}
+                    {% for j in range(dims.k) %}
+                        <input type="number" name="B_{{i}}_{{j}}" required placeholder="0">
+                    {% endfor %}<br>
+                {% endfor %}
+            </div>
+        </div>
+        <button type="submit">Обчислити добуток</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Меню задач</title>
+    <style>
+        body { font-family: sans-serif; background-color: #f4f7f9; margin: 0; padding: 40px; display: flex; flex-direction: column; align-items: center; }
+        .welcome-header { text-align: center; margin-bottom: 40px; }
+        h1 { color: #2c3e50; margin-bottom: 10px; }
+        .container { display: flex; gap: 25px; max-width: 900px; justify-content: center; flex-wrap: wrap; }
+
+        .task-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            width: 280px;
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-decoration: none;
+            color: inherit;
+        }
+        .task-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-bottom: 4px solid #007bff;
+        }
+
+        .task-card h3 { color: #007bff; margin-top: 0; }
+        .task-card p { color: #666; font-size: 0.95em; line-height: 1.4; }
+
+        .logout-btn {
+            margin-top: 50px;
+            color: #dc3545;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 20px;
+            border: 1px solid #dc3545;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+        .logout-btn:hover { background-color: #dc3545; color: white; }
+    </style>
+</head>
+<body>
+
+    <div class="welcome-header">
+        <h1>Вітаємо, {{ session['user'] }}!</h1>
+        <p style="color: #7f8c8d;">Оберіть математичну задачу для розв'язання:</p>
+    </div>
+
+    <div class="container">
+        <a href="/task4" class="task-card">
+            <h3>Задача 27.4</h3>
+            <p><b>Зміна знаку</b></p>
+            <p>Аналіз послідовності чисел та підрахунок кількості змін знаку між сусідніми елементами.</p>
+        </a>
+
+        <a href="/task10_step1" class="task-card">
+            <h3>Задача 27.10</h3>
+            <p><b>Множення матриць</b></p>
+            <p>Обчислення добутку двох матриць довільного розміру з виводом введених даних та результату.</p>
+        </a>
+    </div>
+
+    <a href="/logout" class="logout-btn">Вийти з системи</a>
+
+</body>
+</html>

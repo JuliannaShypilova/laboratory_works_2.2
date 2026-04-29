@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Задача 27.10 - Крок 1</title>
+    <style>
+        body { font-family: sans-serif; margin: 30px; line-height: 1.6; }
+        .info-box { background-color: #f0f8ff; padding: 15px; border-left: 5px solid #007bff; margin-bottom: 20px; }
+        input { padding: 8px; margin: 5px 0; border: 1px solid #ddd; border-radius: 4px; width: 60px; }
+        button { background-color: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="info-box">
+        <h2>Задача 27.10: Множення матриць</h2>
+        <p><b>Інструкція:</b> Вкажіть розміри матриць. Пам'ятайте, що кількість стовпців першої матриці має дорівнювати кількості рядків другої (параметр <b>m</b>).</p>
+    </div>
+
+    <form method="post">
+        <label>Рядків матриці A (n):</label><br>
+        <input type="number" name="n" value="2" min="1" required><br>
+        <label>Спільний розмір (m):</label><br>
+        <input type="number" name="m" value="2" min="1" required><br>
+        <label>Стовпців матриці B (k):</label><br>
+        <input type="number" name="k" value="2" min="1" required><br><br>
+        <button type="submit">Далі (ввести елементи)</button>
+    </form>
+    <br><a href="/menu">← Назад у меню</a>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Задача 27.4</title>
+    <style>
+        body { font-family: sans-serif; margin: 30px; line-height: 1.6; }
+        .info-box { background-color: #f0f8ff; padding: 15px; border-left: 5px solid #007bff; margin-bottom: 20px; }
+        .history-box { background: #f9f9f9; padding: 10px; border: 1px solid #ddd; margin-bottom: 20px; }
+        .result-box { color: green; font-size: 1.5em; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <div class="info-box">
+        <h2>Задача 27.4: Підрахунок змін знаку</h2>
+        <p><b>Інструкція:</b> Вводьте числа по одному. Щоб завершити послідовність і побачити результат, <b>обов'язково введіть 0</b>.</p>
+    </div>
+
+    <div class="history-box">
+        <strong>Введені числа:</strong>
+        {% if state.history %}
+            {{ state.history | join(', ') }}
+        {% else %}
+            <i>(очікування введення...)</i>
+        {% endif %}
+    </div>
+
+    {% if not state.finished %}
+        <form method="post">
+            <label>Введіть число:</label>
+            <input type="number" name="number" autofocus required>
+            <button type="submit">Обробити</button>
+        </form>
+    {% else %}
+        <div class="result-box">
+            Кількість змін знаку: {{ result }}
+        </div>
+        <br>
+        <a href="/task4_reset" style="background: #007bff; color: white; padding: 10px; text-decoration: none; border-radius: 5px;">
+            Почати нову послідовність
+        </a>
+    {% endif %}
+
+    <hr style="margin-top: 40px;">
+    <a href="/menu">← Повернутися до вибору задач</a>
+
+</body>
+</html>
